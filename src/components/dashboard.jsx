@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Plus, 
   Calendar as CalendarIcon, 
-  List, 
-  Filter,
+
   Search,
   Edit,
   Trash2,
@@ -15,16 +14,16 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
-  Users,
+
   Settings,
   LogOut,
   BarChart3,
-  AlertCircle,
+
   CheckCircle,
   XCircle
 } from 'lucide-react';
 import axios from 'axios';
-import Alert from './alert';
+
 import './dashboard.css';
 export default function AdminDashboard() {
   const [activeView, setActiveView] = useState('overview');
