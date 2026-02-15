@@ -46,8 +46,8 @@ export default function AdminDashboard() {
   
     
 const [userInfo, setUserInfo] = useState({
-    name:  localStorage.getItem('userName'),
-    email: localStorage.getItem('userEmail')
+    name:  localStorage.getItem('userName') || 'User',
+    email: localStorage.getItem('userEmail') || 'user@example.com'
   });
   // Calendar state
   const [calendarMonth, setCalendarMonth] = useState(new Date().getMonth());
@@ -735,10 +735,10 @@ const [userInfo, setUserInfo] = useState({
 
         <div className="sidebar-footer">
           <div className="admin-profile">
-            <div className="profile-avatar">{userInfo.name.at(0)}</div>
+            <div className="profile-avatar">{userInfo?.name?.charAt(0) || 'U'}</div>
             <div className="profile-info">
-              <p className="profile-name">{userInfo.name}</p>
-              <p className="profile-email">{userInfo.email}</p>
+             <p className="profile-name">{userInfo?.name || 'User'}</p>
+<p className="profile-email">{userInfo?.email || 'user@example.com'}</p>
             </div>
             <button className="logout-btn" title="Logout">
               <LogOut size={18} />
